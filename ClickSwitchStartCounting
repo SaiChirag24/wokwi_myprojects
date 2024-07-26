@@ -1,0 +1,26 @@
+volatile char *dirf,*dirk,*outf,*ink,x;
+volatile long i,j,k;
+char set[10];
+
+void setup() {
+  
+  dirf = 0x30;dirk = 0x107;
+  *dirf = 0xFF;*dirk = 0x00;
+  outf = 0x31;ink = 0x106;
+  set[0]=0x3F;set[1]=0x06;set[2]=0x5B;set[3]=0x4F;set[4]=0x66;set[5]=0x6D;set[6]=0x7D;set[7]=0x07;set[8]=0x7F;set[9]=0x6F;
+}
+
+void loop() {
+  x = *ink;
+  
+
+  for(i=0;i<9;i++){
+    if(x & (1<<i)){
+      for(k=i;k<10;k++){
+        *outf = set[k+1];
+        for(j=0;j<200000;j++);
+      
+    }}
+  }
+
+}
