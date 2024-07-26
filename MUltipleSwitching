@@ -1,0 +1,20 @@
+void setup(){
+    volatile char *dirf,*dirk,*outf,*ink,x;
+    volatile long i;
+    dirf = 0x30; dirk = 0x107;
+    *dirf = 0x01; *dirk = 0x00;
+    outf = 0x31; ink = 0x106;
+
+    while(1){
+      x = *ink;
+      
+        *outf = x;
+        for(i=0;i<100000;i++);
+        *outf = 0x00;
+        
+      
+    }
+  }
+
+
+void loop(){}
