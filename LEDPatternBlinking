@@ -1,0 +1,29 @@
+void setup() {
+  // put your setup code here, to run once:
+    
+}
+
+void loop() {
+    volatile char *dir,*out;
+    volatile long i;
+    dir = 0x30; out = 0x31;
+    *dir = 0xFF;
+      *out = 0xFF;
+      for(i=0;i<300000;i++);
+      *out = 0x81;
+      for(i=0;i<100000;i++);
+      *out = 0x42;
+      for(i=0;i<100000;i++);
+      *out = 0x24;
+      for(i=0;i<100000;i++);
+      *out = 0x18;
+      for(i=0;i<100000;i++);
+      *out = 0x18;
+      for(i=0;i<100000;i++);
+      *out = 0x24;
+      for(i=0;i<100000;i++);
+      *out = 0x42;
+      for(i=0;i<100000;i++);
+      *out = 0x81;
+      for(i=0;i<100000;i++);
+}
