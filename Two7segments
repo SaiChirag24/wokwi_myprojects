@@ -1,0 +1,17 @@
+void setup() {
+  // put your setup code here, to run once:
+  volatile char *out;
+  out = 0x30;
+  *out = 0xFF;
+  out = 0x107;
+  *out = 0xFF;
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  volatile char *data;
+  data = 0x31;
+  *data = 0x5B;
+  data = 0x108;
+  *data = 0x6D;
+}
